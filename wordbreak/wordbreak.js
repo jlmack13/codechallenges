@@ -9,38 +9,24 @@
 // You may assume the dictionary does not contain duplicate words.
 
 function wordBreak (s, wordDict) {
-    if(wordDict.length === 0) {
-        return false;
+    if (s === '') {
+        return true;
     }
-    const result = []; 
-    wordDict.map(word => {
-        if(s.match(word)) {
-            result.push(word)
-            s = s.slice(word.length);
-        }
-    })
-    console.log(s);
-    if (s !== "") {
-        result.push(s);
-    }
-    console.log(result);
-    for (let word of result) {
-        if (wordDict.indexOf(word) === -1) {
-            return false;
+
+    for(let i = 1; i <= s.length; i++) {
+        const prefix = s.substring(0, i);
+        console.log(prefix);
+        const rest = s.substring(i);
+        console.log(rest);
+        if(wordDict.includes(prefix) && wordBreak(rest, wordDict)) {
+            return true;
         }
     }
-    return true;
+
+    return false;
 };
 
 module.exports = wordBreak;
-
-//  for (let i = 0; i < wordDict.length; i++) {
-//      if (s.match(wordDict[i])) {
-//          result.push(wordDict[i]);
-//          s = s.replace(wordDict[i], "");
-//      }
-//  }
-
 
 //My original, non-working solution. It fails because if the first word matches it removes it even if the next two word would be match if it didn't 
 // const result = [];
