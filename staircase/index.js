@@ -28,3 +28,5 @@ function staircase(n) {
         console.log(stair)
     }
 }
+
+module.exports = staircase;
