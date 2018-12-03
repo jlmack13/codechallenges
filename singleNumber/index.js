@@ -1,3 +1,8 @@
+/* Given a non-empty array of integers, every element appears twice except for one. Find that single one.
+
+Problem from Leetcode: https://leetcode.com/problems/single-number/ 
+*/
+
 var singleNumber = function(nums) {
     const charMap = {};
     let result;
