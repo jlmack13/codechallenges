@@ -13,7 +13,7 @@ var singleNumber = function(nums) {
             result = key; 
         }
     }
-    return result;
+    return parseInt(result);
 };
 
 module.exports = singleNumber;
