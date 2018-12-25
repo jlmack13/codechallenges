@@ -11,3 +11,7 @@ test('Returns the string in lowercase', () => {
 test('Returns the string in lowercase', () => {
     expect(toLowerCase("World")).toEqual("world")
 });
+
+test('Returns an entire sentence in lowercase', () => {
+    expect(toLowerCase('ThiS WHoLe THiNg SHouLD BE lOwErCaSE!')).toEqual("this whole thing should be lowercase!")
+});
